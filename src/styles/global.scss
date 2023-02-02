@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --white: #FFF;
+    --blue: #004AAD;
+    --black: #1C1C1C;
+    --gray: #d4d4d4;
+}
+
+body{
+    background-color: var(--black)
+}
+
+body, input, textarea, select, button{
+    font-family: 'Poppins', sans-serif;
+    font: 400 1rem 'Poppins', sans-serif;
+}

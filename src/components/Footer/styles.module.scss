@@ -1,0 +1,50 @@
+
+.footerContent{
+    max-width: 100%;
+    height: 10rem;
+    border-top: 1px solid var(--gray);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.linkContent{
+
+
+    a{
+        display: inline-block;
+        position: relative;
+        padding: 0 0.5rem;
+        color: var(--gray-100);
+        transition: color 0.2s;
+        text-decoration: none;
+        color: var(--white);
+        font-weight: bold;
+        transition: color 0.2s;
+        
+        &:hover{
+         color: var(--blue);
+        
+        }
+    }
+}
+
+.socialContent{
+
+    svg{
+        margin: 0.5rem;
+
+        &[data-color="red"]:hover{
+            fill: red
+        }
+        &[data-color="blue"]:hover{
+            fill: blue
+        }
+        &[data-color="green"]:hover{
+            fill: green
+        }
+
+    }
+
+}
