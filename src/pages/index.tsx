@@ -11,7 +11,6 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 import styles from '../styles/home.module.scss'
-import banner from '../../public/image/banner.png'
 
 import Link from 'next/link'
 
@@ -77,7 +76,7 @@ export default function Home({ data }: DataProps) {
 
         <div className={styles.sectionContainer}>
           <section>
-            <h2>R{data.title_projects}</h2>
+            <h2>{data.title_projects}</h2>
             <motion.div ref={carousel} className={styles.containerCarousel}
             whileTap={{cursor: "grabbing"}}>
               

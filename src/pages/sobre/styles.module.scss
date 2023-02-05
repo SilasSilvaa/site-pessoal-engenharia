@@ -1,0 +1,40 @@
+
+.container{
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--white);
+    }
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    max-width: 1120px;
+
+    span{
+        margin-top: 2rem ;
+        max-width: 750px;
+        display: flex;
+        text-align: start;
+        font-size: 1rem;
+        line-height: 2.25rem;
+        color: var(--white);
+        margin-right: 2rem;
+    }
+
+    
+}

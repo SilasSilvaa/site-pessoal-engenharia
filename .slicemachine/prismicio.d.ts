@@ -151,12 +151,115 @@ interface HomeDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomeDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
-export type AllDocumentTypes = HomeDocument;
+/** Content for project documents */
+interface ProjectDocumentData {
+    /**
+     * imageProject field in *project*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.imageproject
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    imageproject: prismicT.ImageField<never>;
+    /**
+     * title field in *project*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.textproject
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    textproject: prismicT.RichTextField;
+    /**
+     * description field in *project*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * dateProject field in *project*
+     *
+     * - **Field Type**: Timestamp
+     * - **Placeholder**: Data em que o projeto foi realizado
+     * - **API ID Path**: project.dateproject
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/timestamp
+     *
+     */
+    dateproject: prismicT.TimestampField;
+}
+/**
+ * project document from Prismic
+ *
+ * - **API ID**: `project`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjectDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ProjectDocumentData>, "project", Lang>;
+/** Content for sobre documents */
+interface SobreDocumentData {
+    /**
+     * title field in *sobre*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sobre.tite
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    tite: prismicT.TitleField;
+    /**
+     * description field in *sobre*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Descrição quem somos
+     * - **API ID Path**: sobre.description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * banner field in *sobre*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sobre.banner
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    banner: prismicT.ImageField<never>;
+}
+/**
+ * sobre document from Prismic
+ *
+ * - **API ID**: `sobre`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SobreDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SobreDocumentData>, "sobre", Lang>;
+export type AllDocumentTypes = HomeDocument | ProjectDocument | SobreDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomeDocumentData, HomeDocument, AllDocumentTypes };
+        export type { HomeDocumentData, HomeDocument, ProjectDocumentData, ProjectDocument, SobreDocumentData, SobreDocument, AllDocumentTypes };
     }
 }

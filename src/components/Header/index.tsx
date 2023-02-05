@@ -9,7 +9,9 @@ export function Header(){
     return(
         <header className={styles.headerContainer}>
             <div className={styles.headerContent}>
-                <Image src={logo} alt='logo'/>
+                <Link href="/">
+                <Image src={logo} alt='logo' />
+                </Link>
                 <nav>
                     <Link legacyBehavior href='/'>
                         <a>Home</a>

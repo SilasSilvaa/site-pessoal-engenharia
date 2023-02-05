@@ -1,0 +1,55 @@
+
+import { GetStaticProps } from 'next'
+import * as prismic from "@prismicio/client"
+import * as prismicH from '@prismicio/helpers'
+import sm from '../../../sm.json'
+
+import Image from 'next/image'
+
+import styles from './styles.module.scss'
+
+type Data ={
+    title: string,
+    description: string,
+    banner: string
+}
+
+interface DataProps{
+    data: Data
+}
+
+export default function Sobre({ data }: DataProps){
+    
+    return(
+        <section className={styles.container}>
+            <h1>{data.title}</h1>
+            <div className={styles.content}>
+                <span> {data.description}</span>
+            <Image src={data.banner} alt="" width={420} height={420} quality={100}/>
+            </div>
+        </section>
+
+    )
+}
+
+export const getStaticProps: GetStaticProps = async() =>{
+    
+    const client = prismic.createClient(sm.apiEndpoint)
+    const response = await client.getSingle('sobre')
+
+    const {tite, description, banner} = response.data
+
+
+    const data = {
+        title: prismicH.asText(tite),
+        description: prismicH.asText(description),
+        banner: banner.url
+    }
+
+    return{
+        props:{
+            data
+        },
+        revalidate: 30 * 60
+    }
+}
