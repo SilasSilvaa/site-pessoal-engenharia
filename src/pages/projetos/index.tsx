@@ -69,7 +69,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const data = response.results.map((project) => {
         return{
             id: project.data.id,
-            imageProject: prismicH.asText(project.data.imageproject),
+            imageProject: prismicH.asText(project.data.imageproject)
 
         }
     })
