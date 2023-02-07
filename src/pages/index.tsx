@@ -26,7 +26,7 @@ span: string,
 banner: string,
 title_projects: string,
 title_services: string,
-subtitle_first: string,
+subtitle_firts: string,
 description_first: string,
 subtitle_second: string,
 description_second: string,
@@ -106,7 +106,7 @@ export default function Home({ data }: DataProps) {
         <div className={styles.sectionText}>
           <section> 
               <h2>{data.title_services}</h2>
-              <p>{data.subtitle_first}</p>
+              <p>{data.subtitle_firts}</p>
               <div className={styles.divSpan}>
                 <span>{data.description_first}</span>
               </div>
@@ -140,13 +140,14 @@ export default function Home({ data }: DataProps) {
 export const getStaticProps : GetStaticProps = async () => {
 
   const client =  prismic.createClient(sm.apiEndpoint)
-  const response = await client.getSingle("home")
+  const response = await client.getSingle("homepage")
 
   // console.log(response.data)
 
   const {title,span,banner,title_projects,title_services,
   description_first,subtitle_second,description_second,
-  subtitle_third,description_third,banner_footer, subTitle_firts} = response.data
+  subtitle_third,description_third,banner_footer, subtitle_firts} = response.data
+
 
   const data = {
     title: prismicH.asText(title),
@@ -154,12 +155,12 @@ export const getStaticProps : GetStaticProps = async () => {
     banner: banner.url,
     title_projects: prismicH.asText(title_projects),
     title_services: prismicH.asText(title_services),
+    subtitle_firts: prismicH.asText(subtitle_firts),
     description_first: prismicH.asText(description_first),
     subtitle_second: prismicH.asText(subtitle_second),
     description_second: prismicH.asText(description_second),
     subtitle_third: prismicH.asText(subtitle_third),
     description_third: prismicH.asText(description_third),
-    subTitle_firts: prismicH.asText(subTitle_firts),
     banner_footer: banner_footer.url
   }
 

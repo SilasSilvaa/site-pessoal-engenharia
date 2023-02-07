@@ -1,0 +1,123 @@
+{
+  "id": "homepage",
+  "label": "homepage",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "uid",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "title",
+          "placeholder": "Titulo Principal",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "span": {
+        "type": "StructuredText",
+        "config": {
+          "label": "span",
+          "placeholder": "paragrafo Call to Action",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "banner": {
+        "type": "Image",
+        "config": {
+          "label": "banner",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "title_projects": {
+        "type": "StructuredText",
+        "config": {
+          "label": "title_projects",
+          "placeholder": "Titulo do projeto",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "title_services": {
+        "type": "StructuredText",
+        "config": {
+          "label": "title_services",
+          "placeholder": "Titulo Serviços ",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "subtitle_firts": {
+        "type": "StructuredText",
+        "config": {
+          "label": "subTitle_firts",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "description_first": {
+        "type": "StructuredText",
+        "config": {
+          "label": "description_first",
+          "placeholder": "Primeira descrição",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "subtitle_second": {
+        "type": "StructuredText",
+        "config": {
+          "label": "subTitle_second",
+          "placeholder": "segundo subtítulo ",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "description_second": {
+        "type": "StructuredText",
+        "config": {
+          "label": "description_second",
+          "placeholder": "Se",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "subtitle_third": {
+        "type": "StructuredText",
+        "config": {
+          "label": "subTitle_third",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "description_third": {
+        "type": "StructuredText",
+        "config": {
+          "label": "description_third",
+          "placeholder": "Terceira descrição",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "banner_footer": {
+        "type": "Image",
+        "config": {
+          "label": "banner_footer",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}
