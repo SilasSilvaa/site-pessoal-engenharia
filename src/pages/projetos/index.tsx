@@ -7,8 +7,10 @@ import sm from '../../../sm.json'
 
 import Image from 'next/image'
 import styles from './styles.module.scss'
+import { useState } from 'react'
 
 type DataProject = {
+    map(arg0: (projeto: any) => JSX.Element): import("react").ReactNode
     uid: string,
     image: string,
     title: string,
@@ -17,19 +19,28 @@ type DataProject = {
 }
 
 interface Project{
- data: DataProject
+ data: DataProject,
+ page: number
 }
 
-export default function Projetos({data}: Project){
+export default function Projetos({data, page}: Project){
 
-    console.log(data)
+    const [dataProject, setDataProject] = useState(data || [])
+    const [currentPage, setCurrentPage] = useState(Number(page))
+
+    async function moreProjects(pageNumber: number){
+
+        const client = prismic.createClient(sm.apiEndpoint)
+
+        return console.log(client)
+    }
 
     return(
         <section className={styles.container}>
             <h1>Projetos Realizados</h1>
     
             <div className={styles.content}> 
-            {data.map( projeto =>{
+            {dataProject.map( projeto =>{
                 return(
                     <div className={styles.projectInfo} key={projeto.uid}>
                       <Image src={projeto.image} alt="" width={350} height={300}/>
@@ -40,7 +51,7 @@ export default function Projetos({data}: Project){
         }
         </div>
 
-            <button>Ver mais</button>
+            <button onClick={() => moreProjects(currentPage + 1)}>Ver mais</button>
 
         </section>
     )
@@ -58,7 +69,6 @@ export const getStaticProps: GetStaticProps = async () => {
         pageSize: 6
     })
 
-    // console.log(response.results)
     
     const data = response.results.map((project) => {
         return{
@@ -75,11 +85,15 @@ export const getStaticProps: GetStaticProps = async () => {
         
     })
 
-    console.log(data)
+
+    console.log(response)
+
     
     return{
         props:{
-            data
+            data,
+            page: response.total_pages
+
         }
     }
 }
