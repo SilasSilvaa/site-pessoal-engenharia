@@ -20,22 +20,58 @@ type DataProject = {
 
 interface Project{
  data: DataProject,
- page: number
+ page: number,
+ totalPage: number
 }
 
-export default function Projetos({data, page}: Project){
+export default function Projetos({data, page, totalPage}: Project){
 
     const [dataProject, setDataProject] = useState(data || [])
     const [currentPage, setCurrentPage] = useState(Number(page))
 
-    async function moreProjects(pageNumber: number){
+    async function reqProject(pageNumber: number){
 
         const client = prismic.createClient(sm.apiEndpoint)
+        
+        const response = await client.get({
+            predicates:[
+              prismic.predicate.at("document.type", "project")
+            ],
+            orderings: "document.last_publication_date asc",
+            fetch: ["project.imageproject", "project.titleproject", "project.descriptionproject", "project.dateproject"],
+            pageSize: 3,
+            page: 1
+        })
+        
+        return response
+    } 
 
-        return console.log(client)
+    async function moreProjects(pageNumber: number){
+        const response = await reqProject(pageNumber)
+
+        if(response.results.length === 0){
+            return
+        }
+
+        const data = response.results.map((project) => {
+            return{
+                uid: project.uid,
+                image: prismicH.asImageSrc(project.data.imageproject),
+                title: prismicH.asText(project.data.titleproject),
+                description: prismicH.asText(project.data.descriptionproject),
+                data: prismicH.asDate(project.data.dateproject)?.toLocaleDateString('pt-br', {
+                    day: '2-digit',
+                    month:'long',
+                    year: '2-digit'
+                })
+            }
+        })
+
+        console.log(data)
+
     }
 
-    return(
+return(
         <section className={styles.container}>
             <h1>Projetos Realizados</h1>
     
@@ -86,14 +122,12 @@ export const getStaticProps: GetStaticProps = async () => {
     })
 
 
-    console.log(response)
-
     
     return{
         props:{
             data,
-            page: response.total_pages
-
+            page: response.page,
+            totalPage: response.total_pages
         }
     }
 }
