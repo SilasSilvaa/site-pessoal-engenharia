@@ -5,6 +5,7 @@ import * as prismic from "@prismicio/client"
 import * as prismicH from '@prismicio/helpers'
 import sm from '../../../sm.json'
 
+
 import Image from 'next/image'
 import styles from './styles.module.scss'
 import { useState } from 'react'
@@ -35,25 +36,28 @@ export default function Projetos({data, page, totalPage}: Project){
         
         const response = await client.get({
             predicates:[
-              prismic.predicate.at("document.type", "project")
+                prismic.predicate.at("document.type", "project")
             ],
-            orderings: "document.last_publication_date asc",
+            orderings: "document.last_publication_date, asc",
             fetch: ["project.imageproject", "project.titleproject", "project.descriptionproject", "project.dateproject"],
-            pageSize: 3,
-            page: 1
+            pageSize: 6,
+            page: pageNumber,
         })
         
         return response
+
+
     } 
 
     async function moreProjects(pageNumber: number){
+
         const response = await reqProject(pageNumber)
 
         if(response.results.length === 0){
             return
         }
 
-        const data = response.results.map((project) => {
+        const dataProject = response.results.map((project) => {
             return{
                 uid: project.uid,
                 image: prismicH.asImageSrc(project.data.imageproject),
@@ -66,12 +70,17 @@ export default function Projetos({data, page, totalPage}: Project){
                 })
             }
         })
-
-        console.log(data)
-
+            const updateData = data.concat(dataProject).reduce((unique, item) => {
+                return unique.some(x => x.uid === dataProject.uid)
+                ? unique
+                : [...unique, item]
+            }, [])
+    
+            setDataProject(updateData)
     }
 
-return(
+    return(
+        
         <section className={styles.container}>
             <h1>Projetos Realizados</h1>
     
@@ -100,7 +109,7 @@ export const getStaticProps: GetStaticProps = async () => {
         predicates:[
             prismic.predicate.at("document.type", "project")
         ],
-        orderings: "document.last_publication_date desc",
+        orderings: "document.last_publication_date, desc",
         fetch: ["project.imageproject", "project.titleproject", "project.descriptionproject", "project.dateproject"],
         pageSize: 6
     })
