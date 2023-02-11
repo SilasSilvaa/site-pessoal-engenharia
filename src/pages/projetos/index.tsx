@@ -28,6 +28,7 @@ interface Project{
 export default function Projetos({data, page, totalPage}: Project){
 
     const [dataProject, setDataProject] = useState(data || [])
+    const [button, setButton] = useState(false)
     const [currentPage, setCurrentPage] = useState(Number(page))
 
     async function reqProject(pageNumber: number){
@@ -45,8 +46,6 @@ export default function Projetos({data, page, totalPage}: Project){
         })
         
         return response
-
-
     } 
 
     async function moreProjects(pageNumber: number){
@@ -71,12 +70,13 @@ export default function Projetos({data, page, totalPage}: Project){
             }
         })
             const updateData = data.concat(dataProject).reduce((unique, item) => {
-                return unique.some(x => x.uid === dataProject.uid)
+                return unique.some(x => x.uid === item.uid)
                 ? unique
                 : [...unique, item]
             }, [])
     
             setDataProject(updateData)
+            setButton(true)
     }
 
     return(
@@ -95,8 +95,8 @@ export default function Projetos({data, page, totalPage}: Project){
             })
         }
         </div>
-
-            <button onClick={() => moreProjects(currentPage + 1)}>Ver mais</button>
+            { button == true ? ( <div style={{margin: 80}}></div>) : <button onClick={() => moreProjects(currentPage + 1)}>Ver mais</button>}
+            
 
         </section>
     )
