@@ -34,12 +34,17 @@ subtitle_third: string
 description_third: string,
 banner_footer: string,
 }
-
+type Project ={
+  map(arg0: (project: any) => JSX.Element): import("react").ReactNode | import("framer-motion").MotionValue<number> | import("framer-motion").MotionValue<string>
+  image: string,
+  uid: string
+}
 interface DataProps{
-  data: Data
+  data: Data,
+  dataProject: Project
 }
 
-export default function Home({ data }: DataProps) {
+export default function Home({ data, dataProject }: DataProps) {
   
   const img = [teste, teste2, teste3, teste4] 
   
@@ -84,9 +89,9 @@ export default function Home({ data }: DataProps) {
               drag="x"
               dragConstraints={{right: 0, left: -width}}
               >
-              {img.map((image)=>(
-                <motion.div key={image.toString()}>
-                <Image src={image} alt="imagem"/>
+              {dataProject.map((project)=>(
+                <motion.div key={project.uid}>
+                <Image src={project.image} alt="imagem" width={450} height={350} quality={100}/>
                 </motion.div>
                 ))}
               </motion.div>
@@ -164,11 +169,28 @@ export const getStaticProps : GetStaticProps = async () => {
     banner_footer: banner_footer.url
   }
 
-  // console.log(data)
+  const responseProject = await client.get({
+    predicates:[
+        prismic.predicate.at("document.type", "project")
+    ],
+    orderings: "document.last_publication_date, desc",
+    fetch: ["project.imageproject", "project.titleproject"],
+    pageSize: 6
+  })  
+
+  const dataProject = responseProject.results.map((project) => {
+    return{
+        uid: project.uid,
+        image: prismicH.asImageSrc(project.data.imageproject),
+    }
+    
+})
+
 
   return{
     props:{
-      data
+      data, 
+      dataProject
     },
     revalidate: 60 * 30
   }

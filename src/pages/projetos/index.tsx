@@ -11,6 +11,7 @@ import styles from './styles.module.scss'
 import { useState } from 'react'
 
 type DataProject = {
+    concat: any
     map(arg0: (projeto: any) => JSX.Element): import("react").ReactNode
     uid: string,
     image: string,
@@ -28,8 +29,9 @@ interface Project{
 export default function Projetos({data, page, totalPage}: Project){
 
     const [dataProject, setDataProject] = useState(data || [])
-    const [button, setButton] = useState(false)
+    const [button, setButton] = useState(true)
     const [currentPage, setCurrentPage] = useState(Number(page))
+    const [loading, setLoading] = useState(false)
 
     async function reqProject(pageNumber: number){
 
@@ -44,17 +46,28 @@ export default function Projetos({data, page, totalPage}: Project){
             pageSize: 6,
             page: pageNumber,
         })
-        
+
         return response
     } 
 
     async function moreProjects(pageNumber: number){
+
+        setLoading(true)
+        setButton(false)
 
         const response = await reqProject(pageNumber)
 
         if(response.results.length === 0){
             return
         }
+
+
+        if(loading === true){
+            setButton(false)
+            setLoading(true)
+        }
+
+        
 
         const dataProject = response.results.map((project) => {
             return{
@@ -67,16 +80,18 @@ export default function Projetos({data, page, totalPage}: Project){
                     month:'long',
                     year: '2-digit'
                 })
+               
             }
         })
-            const updateData = data.concat(dataProject).reduce((unique, item) => {
+            const updateData = data.concat(dataProject).reduce((unique: any[], item: { uid: any }) => {
                 return unique.some(x => x.uid === item.uid)
                 ? unique
                 : [...unique, item]
             }, [])
     
+            setLoading(false)
+            setButton(false)
             setDataProject(updateData)
-            setButton(true)
     }
 
     return(
@@ -95,7 +110,8 @@ export default function Projetos({data, page, totalPage}: Project){
             })
         }
         </div>
-            { button == true ? ( <div style={{margin: 80}}></div>) : <button onClick={() => moreProjects(currentPage + 1)}>Ver mais</button>}
+            { loading == true ? ( <div className={styles.loading}> <div></div></div>): <div style={{marginBottom: 50}}></div>}
+            {button == false ? (<></>) : <button onClick={() => moreProjects(currentPage + 1)}>Ver todos</button>}
             
 
         </section>

@@ -15,7 +15,7 @@
     }
 
     button{
-        margin-top: 3rem;
+        margin-top: 1rem;
         margin-bottom: 5rem;
         height: 3rem;
         border-radius: 0.5rem;
@@ -62,5 +62,28 @@
         font-weight: 600;
         font-size: 1.1rem;
         padding-left: 0.5rem;
+    }
+}
+
+.loading{
+    max-width: 1120px;
+    margin: 5rem auto;
+    transform: scale(5);
+
+    div{
+        animation: is-rotating 1s infinite;
+        border: 1px solid var(--white); 
+        border-top-color: var(--blue);
+        border-radius: 50%;
+
+
+        width: 5px;
+        height: 5px;
+    }
+
+    @keyframes is-rotating{
+        to{
+            transform: rotate(1turn);
+        }
     }
 }
