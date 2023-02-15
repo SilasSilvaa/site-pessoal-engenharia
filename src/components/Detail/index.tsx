@@ -21,7 +21,7 @@ interface Project{
 
 export default function Detail({conteudo, close}: Project){
     return(
-        <div>
+        <div className={styles.container}>
             <FiX onClick={close} size={25} color="#FFF"/>
             <h1>{conteudo.title}</h1>
             <Image src={conteudo.image} alt={conteudo.title} width={500} height={500}/>
