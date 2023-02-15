@@ -9,6 +9,7 @@ import sm from '../../../sm.json'
 import Image from 'next/image'
 import styles from './styles.module.scss'
 import { useState } from 'react'
+import Detail from '@/components/Detail'
 
 type DataProject = {
     concat: any
@@ -32,6 +33,9 @@ export default function Projetos({data, page, totalPage}: Project){
     const [button, setButton] = useState(true)
     const [currentPage, setCurrentPage] = useState(Number(page))
     const [loading, setLoading] = useState(false)
+
+    const [detail, setDetail] = useState([])
+    const [showDetail, setShowDetail] = useState(false)
 
     async function reqProject(pageNumber: number){
 
@@ -94,28 +98,44 @@ export default function Projetos({data, page, totalPage}: Project){
             setDataProject(updateData)
     }
 
-    return(
+    function openDetail(projeto: any){
         
+        setShowDetail(!showDetail)
+        setDetail(projeto)
+    }
+
+    return(
+    <div>
+
         <section className={styles.container}>
             <h1>Projetos Realizados</h1>
     
             <div className={styles.content}> 
             {dataProject.map( projeto =>{
                 return(
-                    <div className={styles.projectInfo} key={projeto.uid}>
-                      <Image src={projeto.image} alt="" width={350} height={300}/>
+                    <div className={styles.projectInfo} key={projeto.uid} onClick={() => openDetail(projeto)}>
+                        <Image src={projeto.image} alt="" width={350} height={300}/>
                       <p>{projeto.title}</p>
                     </div>
                 )
             })
         }
+
         </div>
             { loading == true ? ( <div className={styles.loading}> <div></div></div>): <div style={{marginBottom: 50}}></div>}
             {button == false ? (<></>) : <button onClick={() => moreProjects(currentPage + 1)}>Ver todos</button>}
-            
-
         </section>
+
+        {showDetail && (
+            <Detail
+            conteudo = {detail}
+            close = {openDetail}
+            />
+        )}
+
+    </div>
     )
+
 }
 
 export const getStaticProps: GetStaticProps = async () => {

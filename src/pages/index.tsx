@@ -34,6 +34,7 @@ subtitle_third: string
 description_third: string,
 banner_footer: string,
 }
+
 type Project ={
   map(arg0: (project: any) => JSX.Element): import("react").ReactNode | import("framer-motion").MotionValue<number> | import("framer-motion").MotionValue<string>
   image: string,
