@@ -29,10 +29,12 @@ interface Project{
 
 export default function Projetos({data, page}: Project){
 
-    const [dataProject, setDataProject] = useState(data || [])
+    const [dataProject, setDataProject] = useState(data)
     const [button, setButton] = useState(true)
     const [currentPage, setCurrentPage] = useState(Number(page))
     const [loading, setLoading] = useState(false)
+
+    const [newData, setNewData] = useState()
 
     const [showDetail, setShowDetail] = useState(false)
 
@@ -100,8 +102,8 @@ export default function Projetos({data, page}: Project){
     function openDetail(projeto: any){
         
         setShowDetail(!showDetail)
-        setDataProject(projeto)
-        // setDetail(projeto)
+        setNewData(projeto)
+
     }
 
     return(
@@ -128,7 +130,7 @@ export default function Projetos({data, page}: Project){
 
         {showDetail && (
             <Detail
-            conteudo = {dataProject} 
+            conteudo = {newData ?? dataProject} 
             close = {openDetail}
             />
         )}
