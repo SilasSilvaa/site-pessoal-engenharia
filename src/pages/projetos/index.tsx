@@ -24,17 +24,16 @@ type DataProject = {
 interface Project{
  data: DataProject,
  page: number,
- totalPage: number
+ conteudo: DataProject
 }
 
-export default function Projetos({data, page, totalPage}: Project){
+export default function Projetos({data, page}: Project){
 
     const [dataProject, setDataProject] = useState(data || [])
     const [button, setButton] = useState(true)
     const [currentPage, setCurrentPage] = useState(Number(page))
     const [loading, setLoading] = useState(false)
 
-    const [detail, setDetail] = useState([])
     const [showDetail, setShowDetail] = useState(false)
 
     async function reqProject(pageNumber: number){
@@ -101,7 +100,8 @@ export default function Projetos({data, page, totalPage}: Project){
     function openDetail(projeto: any){
         
         setShowDetail(!showDetail)
-        setDetail(projeto)
+        setDataProject(projeto)
+        // setDetail(projeto)
     }
 
     return(
@@ -128,7 +128,7 @@ export default function Projetos({data, page, totalPage}: Project){
 
         {showDetail && (
             <Detail
-            conteudo = {detail}
+            conteudo = {dataProject} 
             close = {openDetail}
             />
         )}
@@ -172,7 +172,6 @@ export const getStaticProps: GetStaticProps = async () => {
         props:{
             data,
             page: response.page,
-            totalPage: response.total_pages
         }
     }
 }
