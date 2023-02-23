@@ -23,7 +23,7 @@ export function Footer(){
 
             <div className={styles.socialContent}>
                 <Link href="/">
-                    <FaFacebook data-color="blue" size={25} color="#FFF"/>
+                    <FaFacebook href='/' data-color="blue" size={25} color="#FFF"/>
                 </Link>
                 <Link href="/">
                     <FaInstagram data-color="red" size={25} color="#FFF"/>

@@ -25,7 +25,7 @@ export default function Sobre({ data }: DataProps){
             <h1>{data.title}</h1>
             <div className={styles.content}>
                 <span> {data.description}</span>
-            <Image src={data.banner} alt="" width={420} height={420} quality={100}/>
+            <Image placeholder='blur' blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII=' src={data.banner} alt="" width={420} height={420} quality={100}/>
             </div>
         </section>
 
@@ -50,6 +50,6 @@ export const getStaticProps: GetStaticProps = async() =>{
         props:{
             data
         },
-        revalidate: 30 * 60
+        revalidate: 60 * 60
     }
 }

@@ -14,10 +14,7 @@ import styles from '../styles/home.module.scss'
 
 import Link from 'next/link'
 
-import teste from '../../public/image/teste.png'
-import teste2 from '../../public/image/teste.png'
-import teste3 from '../../public/image/teste.png'
-import teste4 from '../../public/image/teste.png'
+import banner from '../../public/image/project.avif'
 import { useEffect, useRef, useState } from 'react'
 
 type Data ={
@@ -47,7 +44,6 @@ interface DataProps{
 
 export default function Home({ data, dataProject }: DataProps) {
   
-  const img = [teste, teste2, teste3, teste4] 
   
   const carousel = useRef<HTMLDivElement>(null)
   const [width, setWidth] = useState(0)
@@ -57,6 +53,9 @@ export default function Home({ data, dataProject }: DataProps) {
     setWidth(carousel!.current!.scrollWidth - carousel!.current!.offsetWidth)
   
   },[])
+
+
+
 
   return (
     <>
@@ -74,8 +73,8 @@ export default function Home({ data, dataProject }: DataProps) {
               </Link>
             </div>
           </section>
-        <Image src={data.banner} alt='banner' quality={100} width={550} height={500}/>
-        {/* <img src={data.banner} alt="banner"/> */}
+        <Image placeholder='blur' blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII=' src={data.banner} alt='banner' quality={100} width={550} height={500}/>
+
         </div>
 
       <hr className={styles.divisor}/>
@@ -92,7 +91,7 @@ export default function Home({ data, dataProject }: DataProps) {
               >
               {dataProject.map((project)=>(
                 <motion.div key={project.uid}>
-                <Image src={project.image} alt="imagem" width={450} height={350} quality={100}/>
+                <Image placeholder='blur' blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII=' src={project.image} alt="imagem" width={450} height={350} quality={100}/>
                 </motion.div>
                 ))}
               </motion.div>
@@ -128,12 +127,12 @@ export default function Home({ data, dataProject }: DataProps) {
               </div>
 
 
-              <div className={styles.buttonGalary}>
+              <div className={styles.buttonService}>
                 <a>Faça seu orçamento</a>
               </div>
           </section>
               <div className={styles.imageSection}>
-                <Image src={data.banner_footer} alt="banner" width={450} height={450}/>
+                <Image placeholder='blur' blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII=' src={data.banner_footer} alt="banner" width={450} height={450}/>
               </div> 
         </div>
       </main>
@@ -147,8 +146,6 @@ export const getStaticProps : GetStaticProps = async () => {
 
   const client =  prismic.createClient(sm.apiEndpoint)
   const response = await client.getSingle("homepage")
-
-  // console.log(response.data)
 
   const {title,span,banner,title_projects,title_services,
   description_first,subtitle_second,description_second,

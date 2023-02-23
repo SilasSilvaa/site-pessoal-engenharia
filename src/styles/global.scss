@@ -16,6 +16,21 @@ body{
     background-color: var(--black);
 }
 
+body::-webkit-scrollbar {
+    width: 7px;
+}
+body::-webkit-scrollbar-track {
+    background: var(--black);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(136, 136, 136);
+    border-radius: 15px;
+}
+
+img{
+    object-fit: cover;
+}
+
 body, input, textarea, select, button{
     font-family: 'Poppins', sans-serif;
     font: 400 1rem 'Poppins', sans-serif;

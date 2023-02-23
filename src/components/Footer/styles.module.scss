@@ -49,3 +49,58 @@
     }
 
 }
+
+@media (max-width: 1064px){
+    .linkContent{
+
+        a{
+            font-size: 0.9rem;
+        }
+    }
+    .socialContent{
+        svg{
+            width: 22px;
+            height: 22px;
+        }
+    }
+}
+@media (max-width: 930px){
+
+    .footerContent{
+        height: 6rem;
+
+    }
+
+    .linkContent{
+
+        a{
+            font-size: 0.8rem;
+        }
+    }
+    .socialContent{
+        svg{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+@media (max-width: 780px){
+    .footerContent{
+        height: 5rem;
+
+    }
+
+    .linkContent{
+
+        a{
+            font-size: 0.8rem;
+        }
+    }
+    .socialContent{
+        svg{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

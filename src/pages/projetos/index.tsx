@@ -8,8 +8,10 @@ import sm from '../../../sm.json'
 
 import Image from 'next/image'
 import styles from './styles.module.scss'
-import { useState } from 'react'
+import { useState} from 'react'
 import Detail from '@/components/Detail'
+
+import { toast }  from 'react-toastify'
 
 type DataProject = {
     concat: any
@@ -38,6 +40,7 @@ export default function Projetos({data, page}: Project){
 
     const [showDetail, setShowDetail] = useState(false)
 
+
     async function reqProject(pageNumber: number){
 
         const client = prismic.createClient(sm.apiEndpoint)
@@ -51,6 +54,12 @@ export default function Projetos({data, page}: Project){
             pageSize: 6,
             page: pageNumber,
         })
+
+        // if(response.results.length = 3){
+        //     setButton(false)
+        //     setLoading(false)
+        //     toast.info('Todos os projetos foram carregados')
+        // }
 
         return response
     } 
@@ -67,13 +76,6 @@ export default function Projetos({data, page}: Project){
         }
 
 
-        if(loading === true){
-            setButton(false)
-            setLoading(true)
-        }
-
-        
-
         const dataProject = response.results.map((project) => {
             return{
                 uid: project.uid,
@@ -88,35 +90,44 @@ export default function Projetos({data, page}: Project){
                
             }
         })
+
+            
             const updateData = data.concat(dataProject).reduce((unique: any[], item: { uid: any }) => {
                 return unique.some(x => x.uid === item.uid)
                 ? unique
                 : [...unique, item]
             }, [])
-    
-            setLoading(false)
-            setButton(false)
-            setDataProject(updateData)
+
+                setLoading(false)
+                setButton(false)
+                setDataProject(updateData)
     }
 
     function openDetail(projeto: any){
+
+
+        if(showDetail === true){
+            document.documentElement.style.overflow = 'visible'
+        }else{
+            document.documentElement.style.overflow = 'hidden'
+        }
         
         setShowDetail(!showDetail)
         setNewData(projeto)
 
     }
 
+
     return(
     <div>
 
         <section className={styles.container}>
             <h1>Projetos Realizados</h1>
-    
             <div className={styles.content}> 
             {dataProject.map( projeto =>{
                 return(
                     <div className={styles.projectInfo} key={projeto.uid} onClick={() => openDetail(projeto)}>
-                        <Image src={projeto.image} alt="" width={350} height={300}/>
+                        <Image placeholder='blur' blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII=' src={projeto.image} alt="" width={350} height={300}/>
                       <p>{projeto.title}</p>
                     </div>
                 )
@@ -174,6 +185,7 @@ export const getStaticProps: GetStaticProps = async () => {
         props:{
             data,
             page: response.page,
-        }
+        },
+        revalidate: 15 * 60
     }
 }
