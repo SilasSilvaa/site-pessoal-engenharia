@@ -11,7 +11,7 @@ import styles from './styles.module.scss'
 import { useState} from 'react'
 import Detail from '@/components/Detail'
 
-import { toast }  from 'react-toastify'
+// import { toast }  from 'react-toastify'
 
 type DataProject = {
     concat: any

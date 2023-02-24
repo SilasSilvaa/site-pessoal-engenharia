@@ -1,12 +1,14 @@
 .container{
     margin: 0 auto;
-    max-width: 1300px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 2rem;
 
     h1{
+
         text-align: center;
         margin: 3rem;
         font-size: 1.5rem;
@@ -42,7 +44,6 @@
     display: grid;
     grid-template-columns: auto auto auto;
     column-gap: 1rem;
-    padding-left: 2rem;
 }
 
 .projectInfo{
@@ -57,6 +58,7 @@
     }
 
     p{
+        width: 100%;
         background-color: #FFF;
         color: var(--black);
         font-weight: 600;
@@ -84,6 +86,92 @@
     @keyframes is-rotating{
         to{
             transform: rotate(1turn);
+        }
+    }
+}
+
+@media (max-width: 1200px){
+
+    .container{
+
+        h1{
+            font-size: 1.4rem;
+        }
+    
+    }
+
+    .projectInfo{
+        
+        img{
+            max-width: 330px;
+            max-height: 280px;    
+        }
+    }
+}
+@media (max-width: 1064px){
+
+    .container{
+
+        h1{
+            font-size: 1.2rem; 
+        }
+    }
+    .projectInfo{
+        
+        img{
+            max-width: 300px;
+            max-height: 250px;    
+        }
+        p{
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (max-width: 965px){
+    .container{
+
+        h1{
+            font-size: 1.2rem; 
+        }
+        button{
+            height: 2.9rem;
+            font-size: 0.8rem;
+        }
+    }
+    .projectInfo{
+        
+        img{
+            max-width: 280px;
+            max-height: 230px;    
+        }
+        p{
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media (max-width: 930px){
+    .container{
+
+        h1{
+            font-size: 1.1rem; 
+        }
+        button{
+            margin-top: 0.8rem;
+            margin-bottom: 4rem;
+            height: 2.9rem;
+            font-size: 0.7rem;
+        }
+    }
+    .projectInfo{
+        
+        img{
+            max-width: 260px;
+            max-height: 210px;    
+        }
+        p{
+            font-size: 0.8rem;
         }
     }
 }

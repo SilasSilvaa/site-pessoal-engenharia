@@ -361,8 +361,6 @@
 
 @media (max-width: 965px) {
     .content{
-        // max-width: 85%;
-    
         img{
             max-width: 400px;
             max-height: 400px;
@@ -616,20 +614,18 @@
         }
     }
     .sectionText{
+
         max-width: 75%;
         max-height: 80vh;
-        margin: 0 auto;
 
         section{
-            height: 500px;
             margin-top: 0;
             margin-bottom: 0;
-            
+            height: 500px;
             h2{
                 font-size: 1rem;
                 margin-top: 3rem;
                 margin-bottom: 3rem;
-    
             }
     
             p{
@@ -642,7 +638,6 @@
     .divSpan{
         max-width: 400px;
         height: 55px;
-        margin-bottom: 1rem;
         margin-left: 0;
         
         span{
@@ -654,6 +649,7 @@
     }
     .imageSection{
 
+        max-height: 80vh;
         img{
             max-width: 320px;
             max-height: 320px;
@@ -672,7 +668,6 @@
 @media (max-width: 835px){
     .content{
         min-height: 60vh;
-        // max-height: 40vh;
         img{
             max-width: 300px;
             max-height: 300px;
@@ -708,7 +703,6 @@
 @media (max-width: 780px){
 
     .content{
-        // max-width: 80%;
         min-height: 50vh;
         img{
             max-width: 250px;
@@ -924,7 +918,7 @@
         text-align: center;
         h1{
             padding: 0;
-            font-size: 1.5rem
+            font-size: 1.4rem
         }
     }
 
@@ -933,4 +927,56 @@
         align-items: center;
         justify-content: center;
     }
+
+    .sectionContainer{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        h2{
+            font-size: 0.7rem;
+        }
+    }
+    .contentCarousel{
+        img{
+            max-width: 150px;
+            max-height: 120px;
+        }
+    }
+
+    .buttonGalary{
+        a{
+            font-size: 0.4rem;
+            height: 2rem;
+        }
+    }
+    .sectionText{
+        max-width: 80%;
+        min-height: 50vh;
+        max-height: 60vh;
+        margin-bottom: 2rem;
+
+        section{
+            height: 380px;
+            
+            h2{
+                text-align: center;
+    
+            }
+    
+        }
+    }
+
+    .imageSection{
+        display: none;
+    }
+    .buttonService{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.5rem;
+        a{
+            height: 2rem;
+        }
+    }
+
 }

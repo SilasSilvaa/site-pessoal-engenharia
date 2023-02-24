@@ -206,7 +206,7 @@
         align-items: center;
 
         nav{
-            width: 50%;
+            max-width: 350px;
         }
         
         img{
@@ -227,7 +227,8 @@
     .headerContent{
         
         nav{
-            width: 50%
+            max-width: 350px;
+
         }
         img{
             cursor: pointer;
@@ -240,14 +241,12 @@
 
 @media (max-width: 643px){
     .headerContent{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
+        height: 4rem;
+
         nav{
-            background-color: red;
-            width: 400px;
+            max-width: 350px;
             margin-left: 2rem;
+            height: 4rem;
             
             a{
                 font-size: 0.7rem;
