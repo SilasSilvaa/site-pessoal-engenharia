@@ -10,6 +10,7 @@ import Image from 'next/image'
 import styles from './styles.module.scss'
 import { useState} from 'react'
 import Detail from '@/components/Detail'
+import Head from 'next/head'
 
 // import { toast }  from 'react-toastify'
 
@@ -20,7 +21,7 @@ type DataProject = {
     image: string,
     title: string,
     description: string,
-    date: string
+    data: string
 }
 
 interface Project{
@@ -42,7 +43,7 @@ export default function Projetos({data, page}: Project){
 
 
     async function reqProject(pageNumber: number){
-
+        
         const client = prismic.createClient(sm.apiEndpoint)
         
         const response = await client.get({
@@ -115,11 +116,16 @@ export default function Projetos({data, page}: Project){
         setShowDetail(!showDetail)
         setNewData(projeto)
 
+        console.log(projeto)
+
     }
 
 
     return(
-    <div>
+        <>
+        <Head>  
+            <title>Projetos</title>
+        </Head>
 
         <section className={styles.container}>
             <h1>Projetos Realizados</h1>
@@ -144,15 +150,14 @@ export default function Projetos({data, page}: Project){
             conteudo = {newData ?? dataProject} 
             close = {openDetail}
             />
-        )}
-
-    </div>
+            )}
+    </>
     )
 
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-
+    
     const client = prismic.createClient(sm.apiEndpoint)
     const response = await client.get({
         predicates:[
@@ -178,7 +183,6 @@ export const getStaticProps: GetStaticProps = async () => {
         }
         
     })
-
 
     
     return{

@@ -9,7 +9,7 @@ type DataProject = {
     image: string,
     title: string,
     description: string,
-    date: string
+    data: string
 }
 
 interface Project{
@@ -18,6 +18,7 @@ interface Project{
 }
 
 export default function Detail({conteudo, close}: Project){
+
     return(
         <section className={styles.container}>
             <div className={styles.content}>
@@ -28,6 +29,7 @@ export default function Detail({conteudo, close}: Project){
                 <div className={styles.contentDescription}>
                     <h1>{conteudo.title}</h1>
                     <span>{conteudo.description}</span>
+                    <p><strong>Projeto realizado em: </strong>{conteudo.data}</p>
                 </div>
             </div>
         </section>

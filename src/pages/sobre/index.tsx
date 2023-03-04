@@ -7,6 +7,7 @@ import sm from '../../../sm.json'
 import Image from 'next/image'
 
 import styles from './styles.module.scss'
+import Head from 'next/head'
 
 type Data ={
     title: string,
@@ -21,14 +22,18 @@ interface DataProps{
 export default function Sobre({ data }: DataProps){
     
     return(
-        <section className={styles.container}>
-            <h1>{data.title}</h1>
-            <div className={styles.content}>
-                <span> {data.description}</span>
-            <Image placeholder='blur' blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII=' src={data.banner} alt="" width={420} height={420} quality={100}/>
-            </div>
-        </section>
-
+        <>
+        <Head>  
+            <title>Sobre</title>
+        </Head>
+            <section className={styles.container}>
+                <h1>{data.title}</h1>
+                <div className={styles.content}>
+                    <span> {data.description}</span>
+                <Image placeholder='blur' blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII=' src={data.banner} alt="" width={420} height={420} quality={100}/>
+                </div>
+            </section>
+        </>
     )
 }
 

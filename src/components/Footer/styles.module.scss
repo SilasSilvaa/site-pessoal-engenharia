@@ -1,13 +1,18 @@
+.container{
+    position: relative;
+    bottom: -3rem;
+    // width: 100%;
+
+}
 
 .footerContent{
-    max-width: 100%;
+    width: 100%;
     height: 7rem;
     border-top: 1px solid var(--gray);
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    bottom: 0;
 }
 
 .linkContent{
@@ -101,6 +106,45 @@
         svg{
             width: 20px;
             height: 20px;
+        }
+    }
+}
+@media (max-width: 690px){
+    .linkContent{
+        a{
+            font-size: 0.7rem;
+        }
+    }
+    .socialContent{
+        svg{
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+@media (max-width: 643px){
+    .linkContent{
+        a{
+            font-size: 0.6rem;
+        }
+    }
+    .socialContent{
+        svg{
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+@media (max-width: 495px){
+    .linkContent{
+        a{
+            font-size: 0.5rem;
+        }
+    }
+    .socialContent{
+        svg{
+            width: 14px;
+            height: 14px;
         }
     }
 }

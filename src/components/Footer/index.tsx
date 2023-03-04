@@ -7,7 +7,8 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
 export function Footer(){
     return(
-        <footer className={styles.footerContent}>
+        <footer className={styles.container}>
+        <div className={styles.footerContent}>
             <div className={styles.linkContent}>
             
             <Link href="/sobre">
@@ -32,6 +33,7 @@ export function Footer(){
                     <FaWhatsapp data-color="green" size={25} color="#FFF"/>
                 </Link>
             </div>
+        </div>
         </footer>
     )
 } 

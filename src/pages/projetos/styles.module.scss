@@ -175,3 +175,102 @@
         }
     }
 }
+
+@media (max-width: 850px){
+
+    .container{
+        
+        button{
+            margin-top: 0.8rem;
+            margin-bottom: 4rem;
+            height: 2.6rem;
+            font-size: 0.7rem;
+        }
+    }
+
+    .content{
+        max-width: 1120px;
+        display: grid;
+        column-gap: 1.5rem;
+    }
+    
+    .projectInfo{
+        img{
+            max-width: 220px;
+            max-height: 170px;
+            
+        }
+
+        p{
+            font-size: 0.7rem;
+        }
+    }
+}
+
+@media (max-width: 780px){
+    .content{
+        max-width: 1120px;
+        display: grid;
+        column-gap: 1.5rem;
+    }
+    
+    .projectInfo{
+        img{
+            max-width: 200px;
+            max-height: 150px;
+            
+        }
+
+        p{
+            font-size: 0.6rem;
+        }
+    }
+}
+
+@media (max-width: 690px){
+
+    .content{
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 2rem;
+    }
+    
+    .projectInfo{
+        margin-bottom: 2rem;
+        img{
+            max-width: 220px;
+            max-height: 170px;
+            
+        }
+
+        p{
+            font-size: 0.7rem;
+        }
+    }
+}
+
+@media (max-width: 643px){
+
+    .container{
+        margin-top: 0;
+        h1{
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media (max-width: 495px){
+
+    .content{
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .projectInfo{
+
+        img{
+            max-width: 250px;
+            max-height: 250px;
+        }
+    }
+}
