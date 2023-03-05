@@ -3,7 +3,7 @@
 }
 
 .content{
-    min-height: 100vh;
+    min-height:calc(100vh - 6rem);
     margin: 0 auto;
     width: 100%;
 
@@ -952,9 +952,8 @@
     }
     .sectionText{
         max-width: 80%;
-        min-height: 50vh;
-        max-height: 60vh;
-        margin-bottom: 2rem;
+        height: 60vh;
+        margin-bottom: 0;
 
         section{
             height: 380px;
@@ -976,6 +975,7 @@
         align-items: center;
         font-size: 0.5rem;
         a{
+            margin-top: 2rem;
             height: 2rem;
         }
     }
