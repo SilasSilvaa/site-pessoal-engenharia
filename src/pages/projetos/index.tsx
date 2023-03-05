@@ -12,8 +12,6 @@ import { useState} from 'react'
 import Detail from '@/components/Detail'
 import Head from 'next/head'
 
-// import { toast }  from 'react-toastify'
-
 type DataProject = {
     concat: any
     map(arg0: (projeto: any) => JSX.Element): import("react").ReactNode
@@ -55,12 +53,6 @@ export default function Projetos({data, page}: Project){
             pageSize: 6,
             page: pageNumber,
         })
-
-        // if(response.results.length = 3){
-        //     setButton(false)
-        //     setLoading(false)
-        //     toast.info('Todos os projetos foram carregados')
-        // }
 
         return response
     } 
