@@ -6,6 +6,52 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for contatos documents */
+interface ContatosDocumentData {
+    /**
+     * facebook field in *contatos*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: link facebook
+     * - **API ID Path**: contatos.facebook
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    facebook: prismicT.LinkField;
+    /**
+     * whatsapp field in *contatos*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: link whatsapp
+     * - **API ID Path**: contatos.whatsapp
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    whatsapp: prismicT.LinkField;
+    /**
+     * instagram field in *contatos*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: Instagram
+     * - **API ID Path**: contatos.instagram
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    instagram: prismicT.LinkField;
+}
+/**
+ * contatos document from Prismic
+ *
+ * - **API ID**: `contatos`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ContatosDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ContatosDocumentData>, "contatos", Lang>;
 /** Content for teste documents */
 type HomeDocumentData = Record<string, never>;
 /**
@@ -152,6 +198,17 @@ interface HomepageDocumentData {
      *
      */
     banner_footer: prismicT.ImageField<never>;
+    /**
+     * btncontact field in *homepage*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: Botão entre em contato (whatsapp)
+     * - **API ID Path**: homepage.btncontact
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    btncontact: prismicT.LinkField;
 }
 /**
  * homepage document from Prismic
@@ -266,12 +323,12 @@ interface SobreDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SobreDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SobreDocumentData>, "sobre", Lang>;
-export type AllDocumentTypes = HomeDocument | HomepageDocument | ProjectDocument | SobreDocument;
+export type AllDocumentTypes = ContatosDocument | HomeDocument | HomepageDocument | ProjectDocument | SobreDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomeDocumentData, HomeDocument, HomepageDocumentData, HomepageDocument, ProjectDocumentData, ProjectDocument, SobreDocumentData, SobreDocument, AllDocumentTypes };
+        export type { ContatosDocumentData, ContatosDocument, HomeDocumentData, HomeDocument, HomepageDocumentData, HomepageDocument, ProjectDocumentData, ProjectDocument, SobreDocumentData, SobreDocument, AllDocumentTypes };
     }
 }

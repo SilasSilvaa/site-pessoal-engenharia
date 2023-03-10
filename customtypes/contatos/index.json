@@ -1,0 +1,37 @@
+{
+  "id": "contatos",
+  "label": "contatos",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "facebook": {
+        "type": "Link",
+        "config": {
+          "label": "facebook",
+          "placeholder": "link facebook",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "whatsapp": {
+        "type": "Link",
+        "config": {
+          "label": "whatsapp",
+          "placeholder": "link whatsapp",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "instagram": {
+        "type": "Link",
+        "config": {
+          "label": "instagram",
+          "placeholder": "Instagram",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      }
+    }
+  }
+}

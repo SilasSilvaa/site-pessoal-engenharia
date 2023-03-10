@@ -117,6 +117,15 @@
           "constraint": {},
           "thumbnails": []
         }
+      },
+      "btncontact": {
+        "type": "Link",
+        "config": {
+          "label": "btncontact",
+          "placeholder": "Botão entre em contato (whatsapp)",
+          "allowTargetBlank": false,
+          "select": null
+        }
       }
     }
   }

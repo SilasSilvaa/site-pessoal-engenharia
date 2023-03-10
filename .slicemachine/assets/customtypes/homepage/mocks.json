@@ -1,7 +1,7 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "report"
+    "value": "basis"
   },
   "title": {
     "__TYPE__": "StructuredTextContent",
@@ -9,7 +9,7 @@
       {
         "type": "heading1",
         "content": {
-          "text": "Further"
+          "text": "Softly"
         }
       }
     ]
@@ -20,7 +20,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Irure consectetur nisi excepteur aliquip consectetur nostrud enim esse ut. Dolor ipsum commodo tempor laboris non ut eiusmod ad commodo id et esse. Eiusmod cupidatat in occaecat eu quis."
+          "text": "Nisi excepteur nisi nostrud aliqua incididunt esse duis proident fugiat."
         }
       }
     ]
@@ -29,13 +29,13 @@
     "__TYPE__": "ImageContent",
     "origin": {
       "id": "main",
-      "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
-      "width": 3424,
-      "height": 3424
+      "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+      "width": 3648,
+      "height": 4560
     },
-    "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
-    "width": 3424,
-    "height": 3424,
+    "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+    "width": 3648,
+    "height": 4560,
     "edit": {
       "zoom": 1,
       "crop": {
@@ -52,7 +52,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Anim nisi veniam ullamco sit id sunt Lorem sit aliqua cupidatat aliqua laboris. Eiusmod pariatur esse reprehenderit."
+          "text": "Cillum commodo aliqua ipsum reprehenderit ullamco mollit veniam deserunt incididunt eu. Commodo duis nulla esse sit nisi veniam."
         }
       }
     ]
@@ -63,7 +63,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Enim voluptate esse elit culpa in."
+          "text": "Ut voluptate reprehenderit ipsum commodo in aliquip sint non nisi ipsum."
         }
       }
     ]
@@ -74,7 +74,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Sint do culpa mollit reprehenderit tempor ea incididunt. Eu aute eu sint mollit nulla aliqua id proident officia."
+          "text": "Consequat ipsum eu sit tempor enim. Est excepteur ullamco voluptate quis mollit."
         }
       }
     ]
@@ -85,7 +85,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Exercitation tempor ea deserunt eu amet cupidatat labore pariatur id adipisicing ex. Qui ut ullamco irure minim est irure reprehenderit ipsum deserunt et minim irure."
+          "text": "Deserunt tempor eu cupidatat ad pariatur irure commodo voluptate consequat eiusmod velit enim excepteur. Culpa consectetur cupidatat elit amet ipsum occaecat dolor consequat est cupidatat voluptate mollit officia id excepteur."
         }
       }
     ]
@@ -96,7 +96,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Aliqua minim velit ex enim. Velit eiusmod nisi ipsum deserunt eu quis exercitation proident qui incididunt eu aliquip. Nulla non mollit aliquip non voluptate Lorem."
+          "text": "Ad anim aliquip veniam duis anim ipsum tempor consequat velit sit excepteur. Et exercitation mollit dolore ex labore dolor non quis nisi adipisicing aliquip veniam non. Magna ea consectetur consectetur laborum laboris sint laborum."
         }
       }
     ]
@@ -107,7 +107,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Esse do eiusmod nostrud voluptate eu dolore anim ullamco deserunt. Id nulla voluptate sit cillum dolor consequat excepteur do nisi veniam id ex velit. Consectetur occaecat incididunt tempor enim adipisicing ea mollit Lorem dolor labore."
+          "text": "Excepteur labore est non velit eu do velit voluptate voluptate in veniam id. Aute adipisicing non nostrud ex qui dolor incididunt irure do do ullamco Lorem dolore. Velit ipsum elit voluptate ad ullamco fugiat velit."
         }
       }
     ]
@@ -118,7 +118,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Et ipsum eiusmod velit aliquip dolor ex proident incididunt enim in amet nisi non ea. In irure nulla minim pariatur minim velit fugiat eu eiusmod."
+          "text": "Pariatur dolore tempor esse voluptate minim velit aliqua ullamco labore do et excepteur quis non."
         }
       }
     ]
@@ -129,7 +129,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Adipisicing culpa est ea labore commodo mollit et. Officia tempor non aute incididunt veniam fugiat ullamco excepteur et non do non cupidatat commodo. Labore ex quis voluptate aliqua laborum consectetur in eu occaecat elit officia proident non."
+          "text": "Ea irure culpa elit magna culpa ut ut officia ullamco exercitation do."
         }
       }
     ]
@@ -138,13 +138,13 @@
     "__TYPE__": "ImageContent",
     "origin": {
       "id": "main",
-      "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055",
-      "width": 3277,
-      "height": 4092
+      "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+      "width": 3810,
+      "height": 5715
     },
-    "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055",
-    "width": 3277,
-    "height": 4092,
+    "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+    "width": 3810,
+    "height": 5715,
     "edit": {
       "zoom": 1,
       "crop": {
@@ -154,5 +154,12 @@
       "background": "transparent"
     },
     "thumbnails": {}
+  },
+  "btncontact": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "ExternalLink",
+      "url": "http://twitter.com"
+    }
   }
 }
