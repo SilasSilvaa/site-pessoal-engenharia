@@ -24,7 +24,7 @@ export function Header(){
                     </Link>
                 </nav>
                 <div className={styles.buttonContact}>
-                    <a>
+                    <a href='https://web.whatsapp.com' target="_blank">
                         Entre em contato
                     </a>
                 </div>

@@ -6,6 +6,7 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
 
 export function Footer(){
+
     return(
         <footer className={styles.container}>
         <div className={styles.footerContent}>
@@ -14,7 +15,7 @@ export function Footer(){
             <Link href="/sobre">
                 Sobre nós 
             </Link>                
-             <Link href="/">
+             <Link href="/https://web.whatsapp.com" target="_blank">
                 Entre em contato conosco    
             </Link>                
             <Link href="/projetos">
@@ -23,17 +24,17 @@ export function Footer(){
             </div>
 
             <div className={styles.socialContent}>
-                <Link href="/">
-                    <FaFacebook href='/' data-color="blue" size={25} color="#FFF"/>
+                <Link href='https://pt-br.facebook.com/' target="_blank">
+                    <FaFacebook data-color="blue" size={25} color="#FFF"/>
                 </Link>
-                <Link href="/">
+                <Link href="https://www.instagram.com/" target="_blank">
                     <FaInstagram data-color="red" size={25} color="#FFF"/>
                 </Link>
-                <Link href="/">
+                <Link href="https://web.whatsapp.com/" target="_blank">
                     <FaWhatsapp data-color="green" size={25} color="#FFF"/>
                 </Link>
             </div>
         </div>
         </footer>
     )
-} 
+}

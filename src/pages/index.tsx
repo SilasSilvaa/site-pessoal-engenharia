@@ -68,7 +68,7 @@ export default function Home({ data, dataProject }: DataProps) {
             <h1>{data.title}</h1>
             <span>{data.span}</span>
             <div className={styles.buttonContact}>
-              <Link href="/">
+              <Link href="https://web.whatsapp.com" target="_blank">
               Fale conosco!
               </Link>
             </div>
@@ -128,7 +128,7 @@ export default function Home({ data, dataProject }: DataProps) {
 
 
               <div className={styles.buttonService}>
-                <a>Faça seu orçamento</a>
+                <a href='https://web.whatsapp.com' target="_blank">Faça seu orçamento</a>
               </div>
           </section>
               <div className={styles.imageSection}>

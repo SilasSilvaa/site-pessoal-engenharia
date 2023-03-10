@@ -7,41 +7,7 @@ type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
 /** Content for contatos documents */
-interface ContatosDocumentData {
-    /**
-     * facebook field in *contatos*
-     *
-     * - **Field Type**: Link
-     * - **Placeholder**: link facebook
-     * - **API ID Path**: contatos.facebook
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    facebook: prismicT.LinkField;
-    /**
-     * whatsapp field in *contatos*
-     *
-     * - **Field Type**: Link
-     * - **Placeholder**: link whatsapp
-     * - **API ID Path**: contatos.whatsapp
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    whatsapp: prismicT.LinkField;
-    /**
-     * instagram field in *contatos*
-     *
-     * - **Field Type**: Link
-     * - **Placeholder**: Instagram
-     * - **API ID Path**: contatos.instagram
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    instagram: prismicT.LinkField;
-}
+type ContatosDocumentData = Record<string, never>;
 /**
  * contatos document from Prismic
  *
