@@ -190,6 +190,6 @@ export const getStaticProps : GetStaticProps = async () => {
       data, 
       dataProject
     },
-    revalidate: 60 * 30
+    revalidate: 60 * 2
   }
 }

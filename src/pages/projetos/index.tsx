@@ -5,12 +5,12 @@ import * as prismic from "@prismicio/client"
 import * as prismicH from '@prismicio/helpers'
 import sm from '../../../sm.json'
 
-
 import Image from 'next/image'
 import styles from './styles.module.scss'
 import { useState} from 'react'
 import Detail from '@/components/Detail'
 import Head from 'next/head'
+import Notify from '@/components/Notify'
 
 type DataProject = {
     concat: any
@@ -31,15 +31,17 @@ interface Project{
 export default function Projetos({data, page}: Project){
 
     const [dataProject, setDataProject] = useState(data)
-    const [button, setButton] = useState(true)
+    const [button, setButton] = useState(false)
     const [currentPage, setCurrentPage] = useState(Number(page))
     const [loading, setLoading] = useState(false)
+
+    const [notify, setNotify] = useState(false)
 
     const [newData, setNewData] = useState()
 
     const [showDetail, setShowDetail] = useState(false)
 
-
+    
     async function reqProject(pageNumber: number){
         
         const client = prismic.createClient(sm.apiEndpoint)
@@ -54,13 +56,22 @@ export default function Projetos({data, page}: Project){
             page: pageNumber,
         })
 
+        if(response.results.length < 7){
+            setNotify(true)
+            setButton(true)
+            setLoading(false)
+        }else{
+            setLoading(true)
+            setButton(true)
+        }
+
         return response
     } 
 
     async function moreProjects(pageNumber: number){
 
         setLoading(true)
-        setButton(false)
+        setButton(true)
 
         const response = await reqProject(pageNumber)
 
@@ -91,10 +102,15 @@ export default function Projetos({data, page}: Project){
                 : [...unique, item]
             }, [])
 
-                setLoading(false)
-                setButton(false)
-                setDataProject(updateData)
-    }
+            setLoading(false)
+            setButton(true)
+            setDataProject(updateData)
+            
+            setTimeout(()=> {
+                setNotify(false)
+            }, 1500 )
+            
+        }
 
     function openDetail(projeto: any){
 
@@ -108,17 +124,19 @@ export default function Projetos({data, page}: Project){
         setShowDetail(!showDetail)
         setNewData(projeto)
 
-        console.log(projeto)
-
     }
 
+    function toggleNotify(){
+
+        setNotify(!notify)
+        
+    }
 
     return(
         <>
         <Head>  
             <title>Projetos</title>
         </Head>
-
         <section className={styles.container}>
             <h1>Projetos Realizados</h1>
             <div className={styles.content}> 
@@ -133,9 +151,13 @@ export default function Projetos({data, page}: Project){
         }
 
         </div>
-            { loading == true ? ( <div className={styles.loading}> <div></div></div>): <div style={{marginBottom: 50}}></div>}
-            {button == false ? (<></>) : <button onClick={() => moreProjects(currentPage + 1)}>Ver todos</button>}
+            { loading == true ? ( <div className={styles.loading}> <div></div></div>): <div style={{marginBottom: 40}}></div>}
+            {button ==  true ? <></> : <button onClick={() => moreProjects(currentPage + 1)}>Ver todos</button>}
         </section>
+
+        {notify && (
+            <Notify/>
+        )}
 
         {showDetail && (
             <Detail
@@ -182,6 +204,6 @@ export const getStaticProps: GetStaticProps = async () => {
             data,
             page: response.page,
         },
-        revalidate: 15 * 60
+        revalidate: 60 * 2
     }
 }
