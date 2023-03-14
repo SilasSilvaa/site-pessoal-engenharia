@@ -10,9 +10,11 @@
 
 .content{
     
+    height: 10rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 
     h1{
         display: flex;
@@ -23,8 +25,9 @@
         font-weight: 900;
         color: var(--white);
     }
-
+    
     p{
+        font-size: 1rem;
         color: var(--white);
         margin-bottom: 3rem;
     }
@@ -37,7 +40,7 @@
         border: 0;
         background-color: var(--blue);
         text-decoration: none;
-
+        font-size: 1rem;
         font-weight: bold;
         color: var(--white);
 
@@ -48,6 +51,115 @@
 
         &:hover{
             filter: brightness(1.1);
+        }
+    }
+}
+
+@media (max-width: 1200px){
+
+    .content{
+        h1{
+            font-size: 1.4rem
+        }
+        p{
+            font-size: .9rem
+        }
+        a{
+            font-size: .9rem
+        }
+    }
+}
+
+@media (max-width: 1024px){
+
+    .content{
+        h1{
+            font-size: 1.3rem
+        }
+        p{
+            font-size: .8rem
+        }
+        a{
+            font-size: .8rem
+        }
+    }
+}
+
+@media (max-width: 900px){
+
+    .content{
+        h1{
+            font-size: 1.2rem
+        }
+        p{
+            font-size: .7rem
+        }
+        a{
+            font-size: .7rem
+        }
+    }
+}
+
+@media (max-width: 768px){
+
+    .content{
+        h1{
+            font-size: 1.2rem
+        }
+        p{
+            font-size: .65rem
+        }
+        a{
+            height: 2.5rem;
+            font-size: .65rem
+        }
+    }
+}
+
+@media (max-width: 600px){
+
+    .content{
+        h1{
+            font-size: 1.4rem
+        }
+        p{
+            font-size: .8rem
+        }
+        a{
+            height: 2.5rem;
+            font-size: .65rem
+        }
+    }
+}
+
+@media (max-width: 480px){
+
+    .content{
+        h1{
+            font-size: 1.35rem
+        }
+        p{
+            font-size: .75rem
+        }
+        a{
+            height: 2.5rem;
+            font-size: .65rem
+        }
+    }
+}
+
+@media (max-width: 370px){
+
+    .content{
+        h1{
+            font-size: 1.2rem
+        }
+        p{
+            font-size: .5rem
+        }
+        a{
+            height: 2.5rem;
+            font-size: .65rem
         }
     }
 }
