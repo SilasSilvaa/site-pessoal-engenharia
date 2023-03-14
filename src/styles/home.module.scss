@@ -681,12 +681,12 @@
         }
 
         section {
-            
+
             p {
                 height: 2.5rem;
                 font-size: 0.7rem;
             }
-            
+
             span {
                 font-size: .5rem;
             }
@@ -798,5 +798,21 @@
             height: 2.7rem;
             font-size: .7rem;
         }
+    }
+}
+
+@media (max-height: 610px) {
+    .content {
+        height: 100%;
+    }
+
+    .sectionContainer {
+        height: 100%;
+
+    }
+
+    .sectionText {
+        height: 100%;
+
     }
 }
