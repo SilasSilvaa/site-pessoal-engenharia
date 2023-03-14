@@ -1,13 +1,10 @@
 .container{
-    position: relative;
-    bottom: -3rem;
-    // width: 100%;
-
+    margin: 0;
 }
 
 .footerContent{
     width: 100%;
-    height: 7rem;
+    height: 8rem;
     border-top: 1px solid var(--gray);
     display: flex;
     justify-content: center;
@@ -16,12 +13,15 @@
 }
 
 .linkContent{
-
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     a{
         display: inline-block;
         position: relative;
-        padding: 0 0.5rem;
+        margin: 0 0.5rem;
         color: var(--gray-100);
         transition: color 0.2s;
         text-decoration: none;
@@ -40,6 +40,8 @@
 
     svg{
         margin: 0.5rem;
+        width: 25px;
+        height: 25px;
 
         &[data-color="red"]:hover{
             fill: red
@@ -55,93 +57,84 @@
 
 }
 
-@media (max-width: 1064px){
+@media (max-width: 1200px){
     .linkContent{
-
         a{
-            font-size: 0.9rem;
+            font-size: .95rem;
+    
         }
     }
+    
     .socialContent{
+
         svg{
-            width: 22px;
-            height: 22px;
-        }
-    }
-}
-@media (max-width: 930px){
-
-    .footerContent{
-        height: 6rem;
-
-    }
-
-    .linkContent{
-
-        a{
-            font-size: 0.8rem;
-        }
-    }
-    .socialContent{
-        svg{
-            width: 20px;
-            height: 20px;
+            width: 23px;
+            height: 23px;
         }
     }
 }
 
-@media (max-width: 780px){
-    .footerContent{
-        height: 5rem;
-
-    }
-
+@media (max-width: 1024px){
     .linkContent{
-
         a{
-            font-size: 0.8rem;
+            font-size: .8rem;
+    
         }
     }
+
     .socialContent{
+
         svg{
             width: 20px;
             height: 20px;
         }
     }
 }
-@media (max-width: 690px){
+
+@media (max-width: 768px){
     .linkContent{
         a{
-            font-size: 0.7rem;
+            font-size: .7rem;
+    
         }
     }
+
     .socialContent{
+
         svg{
             width: 18px;
             height: 18px;
         }
     }
 }
-@media (max-width: 643px){
+
+@media (max-width: 600px){
     .linkContent{
         a{
-            font-size: 0.6rem;
+            font-size: .65rem;
+    
         }
     }
+
     .socialContent{
+
         svg{
             width: 16px;
             height: 16px;
         }
     }
 }
-@media (max-width: 495px){
+
+@media (max-width: 370px){
     .linkContent{
         a{
-            font-size: 0.5rem;
+            font-size: .5rem;
+    
         }
     }
+
     .socialContent{
+
         svg{
             width: 14px;
             height: 14px;

@@ -1,37 +1,39 @@
-.container{
+.container {
     display: block;
+    width: 100%;
 }
 
-.content{
-    min-height:calc(100vh - 6rem);
+.content {
     margin: 0 auto;
-    width: 100%;
+    height: calc(100vh - 6rem);
+    width: 80%;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    img{
+    img {
+        margin: 0.5rem;
         max-width: 550px;
         max-height: 550px;
     }
 
 }
 
-.ctatext{
+.ctatext {
     max-width: 600px;
-    height: 500px;
-    
-    h1{
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    h1 {
         font-size: 2.5rem;
         font-weight: 900;
         color: var(--white);
-        margin-top: 2rem ;
-        margin-bottom: 5rem;
-        padding: 2rem 0;
     }
 
-    span{
+    span {
         font-size: 1.8rem;
         line-height: 2.25rem;
         color: var(--white);
@@ -39,7 +41,7 @@
 
 }
 
-.buttonContact{
+.buttonContact {
 
     max-width: 550px;
     height: 100px;
@@ -47,14 +49,16 @@
     align-items: center;
     justify-content: flex-end;
 
-    a{
+    a {
         display: flex;
         align-items: center;
+        justify-content: center;
         height: 3rem;
         border-radius: 0.5rem;
         border: 0;
         background-color: var(--blue);
         text-decoration: none;
+        font-size: 1rem;
 
         font-weight: bold;
         color: var(--white);
@@ -64,972 +68,735 @@
 
         transition: filter 0.2s;
 
-        &:hover{
+        &:hover {
             filter: brightness(1.1);
         }
     }
 
 
 }
-    
-.divisor{
+
+.divisor {
     width: 100%;
     bottom: 0;
     height: 1px;
     border-color: var(--gray);
 }
 
-
-.sectionContainer{
-    margin: 5rem auto;
-    max-width: 1120px;
+//
+.sectionContainer {
+    width: 100%;
+    height: 90vh;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
 
-    section{
-        width: 75vw;
+    section {
+        width: 80%;
+        height: 35rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
-    h2{
+    h2 {
         text-align: start;
-        margin: 2rem 0;
-        margin-left: 1rem;
+        color: var(--white);
+        font-weight: 900;
+        font-size: 1.5rem;
+    }
+
+}
+
+.buttonGalary {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    a {
+        width: 210px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+        border-radius: 0.5rem;
+        border: 0;
+        background-color: var(--blue);
+        text-decoration: none;
+
+        font-size: 1rem;
+
+        font-weight: bold;
+        color: var(--white);
+
+        padding: 0 1rem;
+        cursor: pointer;
+
+        transition: filter 0.2s;
+
+        &:hover {
+            filter: brightness(1.1);
+        }
+    }
+
+}
+
+.containerCarousel {
+    overflow: hidden;
+}
+
+.contentCarousel {
+    display: flex;
+
+    img {
+        max-width: 450px;
+        max-height: 350px;
+        margin: 1rem;
+        pointer-events: none;
+    }
+}
+
+.sectionText {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+
+    h2 {
+        height: 12rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: start;
+        font-size: 1.5rem;
         color: var(--white);
         font-weight: 900;
 
     }
 
-}
+    section {
 
-.buttonGalary{
-    
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    
-    a{
-        display: flex;
-        align-items: center;
-        height: 3rem;
-        border-radius: 0.5rem;
-        border: 0;
-        background-color: var(--blue);
-        text-decoration: none;
-
-        font-weight: bold;
-        color: var(--white);
-
-        padding: 0 1rem;
-        cursor: pointer;
- 
-        transition: filter 0.2s;
-
-        &:hover{
-            filter: brightness(1.1);
-        }
-    }
-
-}
-
-.containerCarousel{
-    overflow: hidden;
-}
-
-.contentCarousel{
-    display: flex;
-
-    img{
-        max-width: 450px;
-        max-height: 350px;
-        margin: 1rem;
-        pointer-events: none;
-        object-fit: cover;
-    }
-}
-
-.sectionText{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5rem;
-    margin-bottom: 12rem;
-    margin-left: 1rem;
-
-    section{
-        max-width: 75vw;
-        
-        h2{
+        p {
+            display: flex;
+            align-items: center;
+            height: 3rem;
+            font-size: 1rem;
             text-align: start;
-            font-size: 1.5rem;
-            color: var(--white);
-            font-weight: 900;
-            margin-top: 2rem;
-            margin-bottom: 5rem;
-
-        }
-
-        p{
-            text-align: start;
-            margin: 0.5rem ;
             color: var(--white);
             font-weight: 900;
         }
 
-    }
-}
-
-.divSpan{
-    max-width: 600px;
-    margin-bottom: 3rem ; 
-    
-    margin-left: 1.1rem;
-    
-    span{
-        text-align: start;
-        color: var(--white);
-        
-    }
-}
-
-.imageSection{
-    
-    height: 725px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 1rem;
-
-    img{
-        max-width: 550px;
-        max-height: 550px;
-    }
-
-
-}
-.buttonService{
-    
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    
-    a{
-        display: flex;
-        align-items: center;
-        height: 3rem;
-        border-radius: 0.5rem;
-        border: 0;
-        background-color: var(--blue);
-        text-decoration: none;
-
-        font-weight: bold;
-        color: var(--white);
-
-        padding: 0 1rem;
-        cursor: pointer;
- 
-        transition: filter 0.2s;
-
-        &:hover{
-            filter: brightness(1.1);
-        }
-    }
-
-}
-
-@media (max-width: 1064px){
-    
-    .content{
-        max-width: 90%;
-        min-height: 80vh;
-
-    
-        img{
-            max-width: 450px;
-            max-height: 450px;
-        }
-    }
-    .ctatext{
-        max-width: 500px;
-        height: 500px;
-        
-        h1{
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--white)
-        }
-    
-        span{
-            font-size: 1.5rem;
-            color: var(--white);
-        }
-    
-    }
-    .buttonContact{
-
-        max-width: 475px;
-        height: 90px;
-    
-    }
-
-    .sectionContainer{
-        max-width: 950px;
-    
-        section{
-            width: 75vw;
-            margin-bottom: 1rem;
-        }
-    
-        h2{
-            font-size: 1.3rem;
-            margin: 1rem 0;
-            margin-left: 0.5rem;
-    
-        }
-    
-    }
-    .contentCarousel{
-        img{
-            max-width: 400px;
-            max-height: 300px;
-        }
-    }
-    .buttonGalary{
-    
-        font-size: 0.8rem;
-
-    
-    }
-    .sectionText{
-        max-width: 950px;
-        min-height: 90vh;
-        margin: 0 auto;
-
-        section{
-            margin-top: 5rem;
-            margin-bottom: 5rem;
-            height: 750px;
-
-            
-            h2{
-                font-size: 1.3rem;
-                margin-top: 3.5rem;
-                margin-bottom: 4rem;
-    
-            }
-    
-            p{
-                font-size: 1rem;
-                margin: 0.3rem ;
-                color: var(--white);
-                font-weight: 900;
-            }
-    
-        }
-    }
-    .divSpan{
-        max-width: 500px;
-        height: 80px;
-        margin-bottom: 3rem;
-        margin-left: 0;
-        
-        span{
-            color: var(--white);
-            font-size: 0.79rem;
+        span {
             display: block;
+            max-width: 600px;
+            text-align: start;
+            color: var(--white);
+            font-size: 1rem;
         }
+
     }
-    
-    .imageSection{
+
+    a {
         display: flex;
         align-items: center;
-        justify-content: center;
-        margin-left: 0.5rem;
-    
-        img{
+        height: 3rem;
+        border-radius: 0.5rem;
+        border: 0;
+        font-size: 1rem;
+        background-color: var(--blue);
+        text-decoration: none;
+        font-weight: bold;
+        color: var(--white);
+
+        padding: 0 1rem;
+        cursor: pointer;
+
+        transition: filter 0.2s;
+
+        &:hover {
+            filter: brightness(1.1);
+        }
+    }
+}
+
+.contentText {
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.imageSection {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+
+    img {
+        object-fit: cover;
+        width: 500px;
+        height: 500px;
+    }
+
+
+}
+
+.buttonService {
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1200px) {
+    .content {
+        img {
             max-width: 450px;
             max-height: 450px;
         }
     }
 
-    .buttonService{
-        font-size: 0.8rem;
+    .ctatext {
+        height: 450px;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        span {
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+            color: var(--white);
+        }
+    }
+
+    .buttonContact {
+        a {
+            width: 170px;
+            height: 3rem;
+            font-size: .95rem;
+        }
+    }
+
+    .sectionContainer {
+
+        h2 {
+            font-size: 1.4rem;
+        }
+    }
+
+    .buttonGalary {
+
+        a {
+            width: 200px;
+            font-size: .95rem;
+        }
+    }
+
+    .contentCarousel {
+
+        img {
+            width: 400px;
+            height: 300px
+        }
+    }
+
+    .sectionText {
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        section {
+
+            p {
+                height: 3rem;
+                font-size: 0.9rem;
+            }
+
+            span {
+                font-size: .8rem;
+            }
+
+        }
+
+        a {
+            font-size: .9rem;
+        }
+    }
+
+    .imageSection {
+        img {
+            width: 400px;
+            height: 400px
+        }
+    }
+
+    .buttonService {
+        height: 12rem;
     }
 }
 
-@media (max-width: 965px) {
-    .content{
-        img{
+
+@media (max-width: 1024px) {
+    .content {
+        img {
             max-width: 400px;
             max-height: 400px;
         }
     }
-    .ctatext{
-        width: 450px;
-        height: 450px;
-        
-        h1{
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: var(--white)
-        }
-    
-        span{
-            font-size: 1.2rem;
-            color: var(--white);
-        }
-        .buttonContact{
 
-            width: 430px;
-            height: 80px;
-            font-size: 0.8rem;
-        
-        }
-    }
-    .sectionContainer{
-        max-width: 85%;
-        
-        section{
-            width: 70vw;    
-        }
-    
-        h2{
-            font-size: 1.1rem;
-    
-        }
-    
-    }
-    .contentCarousel{
-        img{
-            max-width: 350px;
-            max-height: 250px;
-        }
-    }
-    .buttonGalary{
-        font-size: 0.7rem;     
-    }
-    .sectionText{
-        max-width: 85%;
-        min-height: 80vh;
-        margin: 0 auto;
+    .ctatext {
+        height: 400px;
 
-        section{
-            height: 600px;
+        h1 {
+            font-size: 1.8rem;
+        }
 
-            
-            h2{
-                font-size: 1.1rem;
-                margin-top: 3rem;
-                margin-bottom: 3rem;
-    
+        span {
+            font-size: 1.4rem;
+        }
+    }
+
+    .buttonContact {
+        a {
+            width: 155px;
+            height: 2.9rem;
+            font-size: .9rem;
+        }
+    }
+
+    .sectionContainer {
+
+        h2 {
+            font-size: 1.3rem;
+        }
+    }
+
+    .buttonGalary {
+
+        a {
+            width: 180px;
+            font-size: .8rem;
+        }
+    }
+
+    .contentCarousel {
+
+        img {
+            width: 350px;
+            height: 300px
+        }
+    }
+
+    .sectionText {
+        h2 {
+            font-size: 1.3rem;
+        }
+
+        section {
+
+            p {
+                height: 2.8rem;
+                font-size: 0.8rem;
             }
-    
-            p{
-                font-size: 0.9rem;
-            }
-    
-        }
-    }
-    .divSpan{
-        max-width: 450px;
-        height: 75px;
-        margin-bottom: 2rem;
-        margin-left: 0;
-        
-        span{
-            color: var(--white);
-            font-size: 0.65rem;
-            display: block;
-            
-        }
-    }
-    .imageSection{
 
-        img{
-            max-width: 380px;
-            max-height: 380px;
+            span {
+                font-size: .7rem;
+            }
+
+        }
+
+        a {
+            font-size: .8rem;
         }
     }
-    .buttonService{
-        font-size: 0.7rem;
+
+    .imageSection {
+        img {
+            width: 400px;
+            height: 400px
+        }
+    }
+
+    .buttonService {
+        height: 12rem;
     }
 }
 
-@media (max-width: 930px){
-    .content{
-        // max-width: 80%;
-        img{
+@media (max-width: 900px) {
+    .content {
+        height: calc(90vh - 6rem);
+
+        img {
             max-width: 350px;
             max-height: 350px;
         }
     }
-    .ctatext{
-        width: 450px;
-        height: 400px;
-        margin-right: 1rem;
-        
-        h1{
-            font-size: 1.4rem;
-        }
-    
-        span{
-            font-size: 1.1rem;
-            color: var(--white);
-        }
-        .buttonContact{
 
-            width: 400px;
-            height: 80px;
-            font-size: 0.7rem;
-        
-        }
-    }
-    .sectionContainer{
-        max-width: 85%;
-        
-        section{
-            width: 70vw;    
-        }
-    
-        h2{
-            font-size: 1.1rem;
-    
-        }
-    
-    }
-    .contentCarousel{
-        img{
-            max-width: 350px;
-            max-height: 250px;
-        }
-    }
-    .buttonGalary{
-        font-size: 0.7rem;
-    }
-    .sectionText{
-        max-width: 85%;
-        min-height: 80vh;
-        margin: 0 auto;
+    .ctatext {
+        height: 350px;
 
-        section{
-            height: 600px;
+        h1 {
+            font-size: 1.7rem;
+        }
 
-            
-            h2{
-                font-size: 1.1rem;
-                margin-top: 3rem;
-                margin-bottom: 3rem;
-    
-            }
-    
-            p{
-                font-size: 0.9rem;
-                margin: 0.9rem
-            }
-    
+        span {
+            font-size: 1.3rem;
         }
     }
-    .divSpan{
-        max-width: 450px;
-        height: 75px;
-        margin-bottom: 2rem;
-        margin-left: 0;
-        
-        span{
-            color: var(--white);
-            font-size: 0.65rem;
-            display: block;
-            
-        }
-    }
-    .imageSection{
 
-        img{
-            max-width: 380px;
-            max-height: 380px;
+    .buttonContact {
+        a {
+            width: 140px;
+            height: 2.8rem;
+            font-size: .9rem;
         }
     }
-    .buttonService{
-        font-size: 0.7rem;
-    }
-}
 
-@media (max-width: 870px){
-    .content{
-        img{
-            max-width: 320px;
-            max-height: 320px;
-        }
-    }
-    .ctatext{
-        width: 400px;
-        height: 400px;
-        margin-right: 1rem;
-        
-        h1{
-            margin-top: 2rem;
-            margin-bottom: 4rem;
+    .sectionContainer {
+
+        h2 {
             font-size: 1.2rem;
         }
-    
-        span{
+    }
+
+    .buttonGalary {
+
+        a {
+            width: 165px;
+            font-size: .75rem;
+        }
+    }
+
+    .contentCarousel {
+
+        img {
+            width: 300px;
+            height: 250px
+        }
+    }
+
+    .sectionText {
+        h2 {
+            height: 9rem;
             font-size: 1rem;
-            color: var(--white);
         }
-        .buttonContact{
 
-            width: 350px;
-            height: 80px;
-            font-size: 0.6rem;
-            a{
-                height: 2.5rem;
-            }
-        
-        }
-    }
-    .sectionContainer{
-        max-width: 85%;
-        
-        section{
-            width: 70vw;    
-        }
-    
-        h2{
-            font-size: 1rem;
-    
-        }
-    
-    }
-    .contentCarousel{
-        img{
-            max-width: 300px;
-            max-height: 200px;
-        }
-    }
-    .buttonGalary{
-        font-size: 0.6rem;
-        a{
-            height: 2.5rem;
-        }
-    }
-    .sectionText{
+        section {
 
-        max-width: 75%;
-        max-height: 80vh;
 
-        section{
-            margin-top: 0;
-            margin-bottom: 0;
-            height: 500px;
-            h2{
-                font-size: 1rem;
-                margin-top: 3rem;
-                margin-bottom: 3rem;
-            }
-    
-            p{
+            p {
+                height: 2.8rem;
                 font-size: 0.8rem;
-                margin: 0.8rem
-
             }
-    
+
+            span {
+                font-size: .6rem;
+            }
+
+        }
+
+        a {
+            font-size: .6rem;
         }
     }
 
-    .divSpan{
-        max-width: 400px;
-        height: 55px;
-        margin-left: 0;
-        
-        span{
-            color: var(--white);
-            font-size: 0.50rem;
-            display: block;
-            
-        }
-    }
-    .imageSection{
-
-        max-height: 80vh;
-        img{
-            max-width: 320px;
-            max-height: 320px;
-        }
-    }
-    .buttonService{
-        font-size: 0.6rem;
-        a{
-            // padding: 0;
-            height: 2.5rem;
+    .imageSection {
+        img {
+            width: 370px;
+            height: 370px
         }
     }
 
+    .buttonService {
+        height: 9rem;
+    }
 }
 
-@media (max-width: 835px){
-    .content{
-        min-height: 60vh;
-        img{
+@media (max-width: 768px) {
+    .content {
+        height: calc(90vh - 6rem);
+
+        img {
             max-width: 300px;
             max-height: 300px;
         }
     }
-    .ctatext{
-        width: 370px;
-        height: 320px;
-        h1{
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-            font-size: 1.2rem;
-        }
-    
-        span{
-            font-size: 1rem;
-            color: var(--white);
-        }
-        .buttonContact{
 
-            width: 300px;
-            height: 80px;
-            font-size: 0.6rem;
-            a{
-                height: 2.5rem;
-            }
-
-        
-        }
-    }
-
-}
-
-@media (max-width: 780px){
-
-    .content{
-        min-height: 50vh;
-        img{
-            max-width: 250px;
-            max-height: 250px;
-        }
-    }
-    .ctatext{
-        width: 350px;
+    .ctatext {
         height: 300px;
-        margin-right: 0.5rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: .5rem 0;
-        
-        h1{
+
+        h1 {
+            font-size: 1.45rem;
+        }
+
+        span {
             font-size: 1.1rem;
-            margin: 1rem 0;
-        }
-    
-        span{
-            font-size: 1rem;
-            color: var(--white);
-        }
-        .buttonContact{
-
-            width: 350px;
-            height: 80px;
-            font-size: 0.5rem;
-            a{
-                height: 2.5rem;
-            }
-        
         }
     }
 
-    .sectionText{
-        max-width: 80%;
-        min-height: 50vh;
-        max-height: 60vh;
-        margin-bottom: 3rem;
-
-        section{
-            height: 400px;
-            margin-top: 0;
-            margin-bottom: 0;
-            
-            h2{
-                font-size: 0.9rem;
-                margin-top: 2rem;
-                margin-bottom: 2rem;
-    
-            }
-    
-            p{
-                font-size: 0.7rem;
-                margin: 0.7rem
-
-            }
-    
+    .buttonContact {
+        a {
+            width: 120px;
+            height: 2.7rem;
+            font-size: .7rem;
         }
     }
 
-    .divSpan{
-        max-width: 400px;
-        height: 50px;
-        margin-bottom: 1rem;
-        margin-left: 0;
-        
-        span{
-            color: var(--white);
-            font-size: 0.50rem;
-            display: block;
-            
-        }
-    }
-    .imageSection{
-        height: 400px;
+    .sectionContainer {
 
-        img{
-            max-width: 280px;
-            max-height: 280px;
-        }
-    }
-    .buttonService{
-        font-size: 0.6rem;
-        a{
-            // padding: 0;
-            height: 2.5rem;
+        h2 {
+            font-size: 1.1rem;
         }
     }
 
-}
+    .buttonGalary {
 
-@media (max-width: 690px){
-
-    .content{
-        // max-width: 75%;
-        min-height: 40vh;
-        img{
-            max-width: 220px;
-            max-height: 220px;
+        a {
+            width: 165px;
+            font-size: .75rem;
         }
     }
-    .ctatext{
-        width: 300px;
-        height: 300px;
-        
-        h1{
-            font-size: 1rem;
-        }
-        span{
-            font-size: 1rem;
-            color: var(--white);
-        }
-        .buttonContact{
 
+    .contentCarousel {
+
+        img {
             width: 300px;
-            height: 80px;
-            font-size: 0.5rem;
-            a{
-                font-size: 0.6rem;
-                height: 2rem;
+            height: 250px
+        }
+    }
+
+    .sectionText {
+        h2 {
+            height: 9rem;
+            font-size: 1rem;
+        }
+
+        section {
+
+
+            p {
+                height: 2.5rem;
+                font-size: 0.7rem;
             }
-        
-        }
-    }
 
-    .sectionContainer{
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-
-        h2{
-            font-size: 0.8rem;
-        }
-    }
-    .contentCarousel{
-        img{
-            max-width: 210px;
-            max-height: 170px;
-        }
-    }
-
-    .buttonGalary{
-        font-size: 0.5rem;
-    }
-
-    .sectionText{
-        max-width: 80%;
-        min-height: 50vh;
-        max-height: 60vh;
-        margin-bottom: 2rem;
-
-        section{
-            height: 380px;
-            
-            h2{
-                font-size: 0.8rem;
-                margin-top: 2rem;
-                margin-bottom: 2rem;
-    
+            span {
+                font-size: .5rem;
             }
-    
-            p{
-                font-size: 0.6rem;
-                margin: 0.6rem
 
-            }
-    
+        }
+
+        a {
+            height: 2.8rem;
+            font-size: .6rem;
         }
     }
 
-    .divSpan{
-        max-width: 300px;
-        height: 50px;
-        margin-bottom: 1rem;
-        margin-left: 0;
-        
-        span{
-            color: var(--white);
-            font-size: 0.5rem;
-            display: block;
-            
-        }
-    }
-    .imageSection{
-        height: 400px;
-
-        img{
-            max-width: 220px;
-            max-height: 220px;
-        }
-    }
-    .buttonService{
-        font-size: 0.5rem;
-        a{
-            height: 2.2rem;
+    .imageSection {
+        img {
+            width: 330px;
+            height: 330px
         }
     }
 
+    .buttonService {
+        height: 9rem;
+    }
 }
 
-@media (max-width: 630px){
+@media (max-width: 600px) {
+    .content {
+        height: calc(80vh - 6rem);
 
-    .content{
-
-        width: 100%;
-        height: 50vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        img{
+        img {
             display: none;
         }
     }
 
-    .ctatext{
+    .ctatext {
+        max-height: 300px;
         text-align: center;
-        margin: 0;
-        h1{
-            padding: 0;
-            font-size: 1.4rem
+
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        span {
+            font-size: 1.1rem;
         }
     }
 
-    .buttonContact{
+    .buttonContact {
         display: flex;
         align-items: center;
         justify-content: center;
-    }
 
-    .sectionContainer{
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-
-        h2{
-            font-size: 0.7rem;
-        }
-    }
-    .contentCarousel{
-        img{
-            max-width: 150px;
-            max-height: 120px;
+        a {
+            width: 140px;
+            height: 2.9rem;
+            font-size: .9rem;
         }
     }
 
-    .buttonGalary{
-        a{
-            font-size: 0.4rem;
-            height: 2rem;
+    .sectionContainer {
+        section {
+            height: 35rem;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1rem;
         }
     }
-    .sectionText{
-        max-width: 80%;
-        height: 60vh;
-        margin-bottom: 0;
 
-        section{
-            height: 380px;
+    .buttonGalary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            width: 150px;
+            font-size: .6rem;
+        }
+    }
+
+    .contentCarousel {
+
+        img {
+            width: 250px;
+            height: 200px
+        }
+    }
+
+    .sectionText {
+        h2 {
+            height: 7rem;
+            font-size: 1rem;
+        }
+
+        section {
             
-            h2{
-                text-align: center;
-    
+            p {
+                height: 2.5rem;
+                font-size: 0.7rem;
+            }
+            
+            span {
+                font-size: .5rem;
             }
 
-            p{
-                margin: 0.5rem
-            }
-    
+        }
+
+        a {
+            height: 2.5rem;
+            font-size: .6rem;
         }
     }
 
-    .imageSection{
-        display: none;
-    }
-    .buttonService{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.5rem;
-        a{
-            margin-top: 2rem;
-            height: 2rem;
+    .imageSection {
+        img {
+            display: none;
         }
     }
 
+    .buttonService {
+        height: 9rem;
+    }
 }
 
-@media (max-width: 350px){
+@media (max-width: 480px) {
+    .content {
+        height: calc(80vh - 6rem);
 
-   
-    .sectionText{
-        max-width: 80%;
-        height: 60vh;
-        margin-bottom: 0;
-
-        section{
-            height: 380px;
-            
-            h2{
-                text-align: center;
-    
-            }
-
-            p{
-                margin: 0.5rem
-            }
-    
+        img {
+            display: none;
         }
     }
 
-    .divSpan{
-        max-width: 300px;
-        height: 40px;
-        margin-bottom: 1rem;
-        margin-left: 0;
-        
-        span{
-            color: var(--white);
-            font-size: 0.4rem;
-            display: block;
-            
+    .ctatext {
+        max-height: 300px;
+        text-align: center;
+
+        h1 {
+            font-size: 1.7rem;
+        }
+
+        span {
+            font-size: 1rem;
         }
     }
 
+    .buttonContact {
+        a {
+            width: 130px;
+            height: 2.8rem;
+            font-size: .8rem;
+        }
+    }
+}
 
+@media (max-width: 370px) {
+    .content {
+        height: calc(70vh - 6rem);
+
+        img {
+            display: none;
+        }
+    }
+
+    .ctatext {
+        max-height: 300px;
+        text-align: center;
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        span {
+            font-size: .9rem;
+        }
+    }
+
+    .buttonContact {
+        a {
+            width: 120px;
+            height: 2.7rem;
+            font-size: .7rem;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .content {
+        img {
+            display: none;
+        }
+    }
+
+    .ctatext {
+        max-height: 300px;
+        text-align: center;
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        span {
+            font-size: .9rem;
+        }
+    }
+
+    .buttonContact {
+        a {
+            width: 120px;
+            height: 2.7rem;
+            font-size: .7rem;
+        }
+    }
 }
